@@ -1,0 +1,17 @@
+trigger:
+- main
+
+pool:
+  name: Default
+
+steps:
+- task: UseJava@1
+  inputs:
+    versionSpec: '11'
+    distribution: 'Temurin'
+
+- script: ./gradlew build
+  displayName: 'Build with Gradle'
+
+- script: java -jar build/libs/gradle-1.0.jar
+  displayName: 'Run JAR'
