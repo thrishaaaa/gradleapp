@@ -5,11 +5,9 @@ pool:
   name: Default
 
 steps:
-- script: echo "My first Azure Pipeline for Gradle project"
-  displayName: 'Say Hello'
-
-- script: ./gradlew clean build
-  displayName: 'Build with Gradle'
-
-- script: java -jar build/libs/gradle-1.0.jar
-  displayName: 'Run JAR'
+- script: echo My Gradle Application
+  displayName: 'Run a one-line script'
+- script: gradle build
+  displayName: 'Building the gradle application'
+- script: gradle run
+  displayName: 'Running gradle application'
